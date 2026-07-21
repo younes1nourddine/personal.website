@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Kostenloser Digitalisierungs-Check · Younes Nourddine</title>
+  <meta name="description" content="In zwei Minuten ehrlich sehen, wo Ihr Betrieb digital Geld und Zeit verliert. Kostenlos, ohne Anmeldung, mit Live-Prüfung Ihrer Website." />
+  <link rel="canonical" href="https://www.deine-domain.de/digitalisierungs-check.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#EDEBE6" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/check.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="brand" href="index.html" aria-label="Younes Nourddine, Startseite">
+        <span class="brand-mark" aria-hidden="true">YN</span>
+        <span class="brand-name">Younes Nourddine</span>
+      </a>
+      <a class="nav-link" href="index.html">Zurück zur Startseite</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="check-hero">
+      <div class="wrap">
+        <p class="eyebrow"><span class="tick" aria-hidden="true"></span>Kostenlos, ohne Anmeldung</p>
+        <h1 class="section-title">Der Digitalisierungs-Check für Ihren Betrieb</h1>
+        <p class="check-lead">Sechs kurze Fragen, zwei Minuten, ein ehrliches Ergebnis. Sie sehen, wo Sie digital Geld und Zeit verlieren, und was die nächsten sinnvollen Schritte sind. Ich verkaufe Ihnen hier nichts.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <form class="quiz" id="check-form" novalidate>
+
+          <fieldset class="quiz-group">
+            <legend>1. Wie oft bleibt Ihr Telefon unbeantwortet, wenn Kunden anrufen?</legend>
+            <label class="quiz-opt"><input type="radio" name="erreichbarkeit" value="3" required /> Fast nie, es geht immer jemand ran</label>
+            <label class="quiz-opt"><input type="radio" name="erreichbarkeit" value="2" /> Selten</label>
+            <label class="quiz-opt"><input type="radio" name="erreichbarkeit" value="1" /> Regelmäßig</label>
+            <label class="quiz-opt"><input type="radio" name="erreichbarkeit" value="0" /> Oft, gerade wenn viel los ist</label>
+          </fieldset>
+
+          <fieldset class="quiz-group">
+            <legend>2. Wie vergeben Sie Termine?</legend>
+            <label class="quiz-opt"><input type="radio" name="termine" value="3" required /> Kunden buchen online selbst</label>
+            <label class="quiz-opt"><input type="radio" name="termine" value="2" /> Telefonisch und per E-Mail</label>
+            <label class="quiz-opt"><input type="radio" name="termine" value="1" /> Nur telefonisch</label>
+            <label class="quiz-opt"><input type="radio" name="termine" value="1" /> Wir vergeben keine Termine</label>
+          </fieldset>
+
+          <fieldset class="quiz-group">
+            <legend>3. Haben Sie eine eigene Website?</legend>
+            <label class="quiz-opt"><input type="radio" name="website" value="3" required /> Ja, aktuell und gepflegt</label>
+            <label class="quiz-opt"><input type="radio" name="website" value="1" /> Ja, aber veraltet</label>
+            <label class="quiz-opt"><input type="radio" name="website" value="0" /> Nein</label>
+          </fieldset>
+
+          <fieldset class="quiz-group">
+            <legend>4. Ist Ihr Google-Unternehmensprofil gepflegt (Fotos, Öffnungszeiten, aktuelle Infos)?</legend>
+            <label class="quiz-opt"><input type="radio" name="google" value="3" required /> Ja, vollständig</label>
+            <label class="quiz-opt"><input type="radio" name="google" value="1" /> Nur teilweise</label>
+            <label class="quiz-opt"><input type="radio" name="google" value="0" /> Nein oder weiß ich nicht</label>
+          </fieldset>
+
+          <fieldset class="quiz-group">
+            <legend>5. Bitten Sie aktiv um Google-Bewertungen?</legend>
+            <label class="quiz-opt"><input type="radio" name="bewertungen" value="3" required /> Ja, systematisch</label>
+            <label class="quiz-opt"><input type="radio" name="bewertungen" value="1" /> Ab und zu</label>
+            <label class="quiz-opt"><input type="radio" name="bewertungen" value="0" /> Nie</label>
+          </fieldset>
+
+          <fieldset class="quiz-group">
+            <legend>6. Wie viele wiederkehrende Aufgaben (Rechnungen, Erinnerungen, Nachfragen) erledigen Sie von Hand?</legend>
+            <label class="quiz-opt"><input type="radio" name="automatisierung" value="3" required /> Wenige, vieles läuft automatisch</label>
+            <label class="quiz-opt"><input type="radio" name="automatisierung" value="1" /> Einiges</label>
+            <label class="quiz-opt"><input type="radio" name="automatisierung" value="0" /> Fast alles von Hand</label>
+          </fieldset>
+
+          <div class="field">
+            <label for="url">Website-Adresse (optional, für eine kurze Live-Prüfung von Tempo und Mobiltauglichkeit)</label>
+            <input id="url" name="url" type="url" placeholder="https://ihre-website.de" inputmode="url" maxlength="200" />
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit" id="check-submit">Auswerten</button>
+          <p class="disclaimer">Ihre Antworten bleiben in Ihrem Browser und werden nicht gespeichert. Nur bei der optionalen Website-Prüfung wird die eingegebene Adresse an Google PageSpeed übermittelt. Das Ergebnis ist eine Orientierung ohne Gewähr, keine Rechts- oder Steuerberatung.</p>
+        </form>
+
+        <section class="result" id="check-result" aria-live="polite" hidden></section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">YN</span>
+        <div>
+          <p class="footer-name">Younes Nourddine</p>
+          <p class="footer-tag">Digitale Lösungen für den Mittelstand</p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Rechtliches">
+        <a href="pages/impressum.html">Impressum</a>
+        <a href="pages/datenschutz.html">Datenschutz</a>
+      </nav>
+      <p class="footer-copy">© <span id="year">2026</span> Younes Nourddine</p>
+    </div>
+  </footer>
+</body>
+</html>
