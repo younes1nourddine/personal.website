@@ -1,0 +1,17 @@
+# Umgebungsvariablen und Secrets: niemals committen
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# Abhaengigkeiten und Build
+node_modules/
+dist/
+
+# System und Logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
