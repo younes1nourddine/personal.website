@@ -39,6 +39,10 @@
     <section class="section" data-check>
       <div class="wrap">
         <div class="quiz-card" id="quiz-card">
+          <div class="mode-toggle" role="group" aria-label="Umfang wählen">
+            <button type="button" class="mode-btn is-active" id="mode-quick" aria-pressed="true">Schnell-Check</button>
+            <button type="button" class="mode-btn" id="mode-deep" aria-pressed="false">Detaillierter Check</button>
+          </div>
           <div class="quiz-progress"><div class="quiz-progress-fill" id="progress-fill"></div></div>
           <p class="quiz-count" id="quiz-count">Frage 1 von 6</p>
           <div id="quiz-step" aria-live="polite"></div>
