@@ -348,8 +348,9 @@ ul, ol, dl { margin: 0; padding: 0; list-style: none; }
 .cat-list { display: grid; gap: 0.8rem; }
 .cat-row { display: grid; grid-template-columns: 9rem 1fr; gap: 0.9rem; align-items: center; }
 .cat-label { font-size: 0.88rem; color: var(--ink-soft); }
-.cat-track { height: 9px; background: var(--line); border-radius: 999px; overflow: hidden; }
-.cat-fill { height: 100%; width: 0; border-radius: 999px; transition: width 0.7s var(--ease); }
+.cat-track { display: block; height: 9px; background: var(--line); border-radius: 999px; overflow: hidden; }
+.cat-fill { display: block; height: 100%; width: 0; border-radius: 999px; transition: width 0.7s var(--ease); }
+.ps-note { color: var(--ink-mute); font-size: 0.9rem; margin-top: 1rem; }
 .is-high { background: #1f3d2f; }
 .is-mid { background: #b5842e; }
 .is-low { background: #9c3b2e; }

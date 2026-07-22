@@ -202,6 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const band = scoreBand(score);
     const c = 2 * Math.PI * 54;
     const offset = c * (1 - score / 100);
+    const psNote = state.url && !(ps && ps.ok)
+      ? '<p class="ps-note">Die Live-Prüfung Ihrer Website war gerade nicht möglich. Ihr übriges Ergebnis sehen Sie unten.</p>'
+      : "";
 
     result.innerHTML = `
       <div class="result-head">
@@ -217,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="score-sub">${band.sub}</p>
         </div>
       </div>
-
+      ${psNote}
       <p class="block-title">Ihre Bereiche im Überblick</p>
       <div class="cat-list">
         ${barCats
