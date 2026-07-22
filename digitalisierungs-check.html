@@ -31,68 +31,30 @@
       <div class="wrap">
         <p class="eyebrow"><span class="tick" aria-hidden="true"></span>Kostenlos, ohne Anmeldung</p>
         <h1 class="section-title">Der Digitalisierungs-Check für Ihren Betrieb</h1>
-        <p class="check-lead">Sechs kurze Fragen, zwei Minuten, ein ehrliches Ergebnis. Sie sehen, wo Sie digital Geld und Zeit verlieren, und was die nächsten sinnvollen Schritte sind. Ich verkaufe Ihnen hier nichts.</p>
+        <p class="check-lead">Beantworten Sie sechs kurze Fragen und sehen Sie sofort, wo Ihr Betrieb digital Geld und Zeit verliert, mit konkreten nächsten Schritten. Ich verkaufe Ihnen hier nichts.</p>
+        <p class="check-meta">6 Fragen · etwa 2 Minuten · ohne Anmeldung</p>
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
+    <section class="section" data-check>
       <div class="wrap">
-        <form class="quiz" id="check-form" novalidate>
-
-          <fieldset class="quiz-group">
-            <legend>1. Wie oft bleibt Ihr Telefon unbeantwortet, wenn Kunden anrufen?</legend>
-            <label class="quiz-opt"><input type="radio" name="erreichbarkeit" value="3" required /> Fast nie, es geht immer jemand ran</label>
-            <label class="quiz-opt"><input type="radio" name="erreichbarkeit" value="2" /> Selten</label>
-            <label class="quiz-opt"><input type="radio" name="erreichbarkeit" value="1" /> Regelmäßig</label>
-            <label class="quiz-opt"><input type="radio" name="erreichbarkeit" value="0" /> Oft, gerade wenn viel los ist</label>
-          </fieldset>
-
-          <fieldset class="quiz-group">
-            <legend>2. Wie vergeben Sie Termine?</legend>
-            <label class="quiz-opt"><input type="radio" name="termine" value="3" required /> Kunden buchen online selbst</label>
-            <label class="quiz-opt"><input type="radio" name="termine" value="2" /> Telefonisch und per E-Mail</label>
-            <label class="quiz-opt"><input type="radio" name="termine" value="1" /> Nur telefonisch</label>
-            <label class="quiz-opt"><input type="radio" name="termine" value="1" /> Wir vergeben keine Termine</label>
-          </fieldset>
-
-          <fieldset class="quiz-group">
-            <legend>3. Haben Sie eine eigene Website?</legend>
-            <label class="quiz-opt"><input type="radio" name="website" value="3" required /> Ja, aktuell und gepflegt</label>
-            <label class="quiz-opt"><input type="radio" name="website" value="1" /> Ja, aber veraltet</label>
-            <label class="quiz-opt"><input type="radio" name="website" value="0" /> Nein</label>
-          </fieldset>
-
-          <fieldset class="quiz-group">
-            <legend>4. Ist Ihr Google-Unternehmensprofil gepflegt (Fotos, Öffnungszeiten, aktuelle Infos)?</legend>
-            <label class="quiz-opt"><input type="radio" name="google" value="3" required /> Ja, vollständig</label>
-            <label class="quiz-opt"><input type="radio" name="google" value="1" /> Nur teilweise</label>
-            <label class="quiz-opt"><input type="radio" name="google" value="0" /> Nein oder weiß ich nicht</label>
-          </fieldset>
-
-          <fieldset class="quiz-group">
-            <legend>5. Bitten Sie aktiv um Google-Bewertungen?</legend>
-            <label class="quiz-opt"><input type="radio" name="bewertungen" value="3" required /> Ja, systematisch</label>
-            <label class="quiz-opt"><input type="radio" name="bewertungen" value="1" /> Ab und zu</label>
-            <label class="quiz-opt"><input type="radio" name="bewertungen" value="0" /> Nie</label>
-          </fieldset>
-
-          <fieldset class="quiz-group">
-            <legend>6. Wie viele wiederkehrende Aufgaben (Rechnungen, Erinnerungen, Nachfragen) erledigen Sie von Hand?</legend>
-            <label class="quiz-opt"><input type="radio" name="automatisierung" value="3" required /> Wenige, vieles läuft automatisch</label>
-            <label class="quiz-opt"><input type="radio" name="automatisierung" value="1" /> Einiges</label>
-            <label class="quiz-opt"><input type="radio" name="automatisierung" value="0" /> Fast alles von Hand</label>
-          </fieldset>
-
-          <div class="field">
-            <label for="url">Website-Adresse (optional, für eine kurze Live-Prüfung von Tempo und Mobiltauglichkeit)</label>
-            <input id="url" name="url" type="url" placeholder="https://ihre-website.de" inputmode="url" maxlength="200" />
+        <div class="quiz-card" id="quiz-card">
+          <div class="quiz-progress"><div class="quiz-progress-fill" id="progress-fill"></div></div>
+          <p class="quiz-count" id="quiz-count">Frage 1 von 6</p>
+          <div id="quiz-step" aria-live="polite"></div>
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-ghost" id="back" hidden>Zurück</button>
+            <button type="button" class="btn btn-primary" id="next" disabled>Weiter</button>
           </div>
+        </div>
 
-          <button class="btn btn-primary btn-block" type="submit" id="check-submit">Auswerten</button>
-          <p class="disclaimer">Ihre Antworten bleiben in Ihrem Browser und werden nicht gespeichert. Nur bei der optionalen Website-Prüfung wird die eingegebene Adresse an Google PageSpeed übermittelt. Das Ergebnis ist eine Orientierung ohne Gewähr, keine Rechts- oder Steuerberatung.</p>
-        </form>
+        <div class="result" id="check-result" hidden aria-live="polite"></div>
 
-        <section class="result" id="check-result" aria-live="polite" hidden></section>
+        <p class="disclaimer">Ihre Antworten bleiben in Ihrem Browser und werden nicht gespeichert. Nur bei der optionalen Website-Prüfung wird die eingegebene Adresse an Google PageSpeed übermittelt. Das Ergebnis ist eine Orientierung ohne Gewähr, keine Rechts- oder Steuerberatung.</p>
+
+        <noscript>
+          <p class="disclaimer">Für diesen Check muss JavaScript aktiviert sein. Sie erreichen mich sonst gern direkt über die <a href="index.html#kontakt">Startseite</a>.</p>
+        </noscript>
       </div>
     </section>
   </main>

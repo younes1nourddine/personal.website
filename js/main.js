@@ -106,10 +106,10 @@ function setupForm() {
         form.reset();
         setStatus("Danke, Ihre Nachricht ist angekommen. Ich melde mich innerhalb von 24 Stunden.", "ok");
       } else {
-        setStatus("Das hat leider nicht geklappt. Schreiben Sie mir gern direkt an kontakt@deine-domain.de.", "error");
+        setStatus("Das hat leider nicht geklappt. Schreiben Sie mir gern direkt an younes1nourddine@gmail.com.", "error");
       }
     } catch (err) {
-      setStatus("Verbindung fehlgeschlagen. Schreiben Sie mir gern direkt an kontakt@deine-domain.de.", "error");
+      setStatus("Verbindung fehlgeschlagen. Schreiben Sie mir gern direkt an younes1nourddine@gmail.com.", "error");
     } finally {
       btn.disabled = false;
       btn.textContent = original;
