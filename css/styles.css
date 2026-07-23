@@ -384,6 +384,41 @@ ul, ol, dl { margin: 0; padding: 0; list-style: none; }
 .lead-form { margin-top: 2rem; border-top: 1px solid var(--line); padding-top: 1.75rem; }
 .lead-intro { color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 1.25rem; max-width: 42ch; }
 
+/* ---------- KI-Assistent (Chat-Demo) ---------- */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.chat-card { max-width: 42rem; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.25rem, 3.5vw, 2rem); }
+.chat-label { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 0.8rem; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+.chip-row--suggest { margin: 0.9rem 0 0; }
+.chip { font: inherit; font-size: 0.86rem; padding: 0.45rem 0.9rem; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink-soft); cursor: pointer; transition: border-color 0.18s var(--ease), background 0.18s var(--ease), color 0.18s var(--ease); }
+.chip:hover { border-color: var(--pine); color: var(--ink); }
+.chip.is-active { background: var(--pine); border-color: var(--pine); color: var(--paper); }
+.chip--ghost { font-size: 0.82rem; color: var(--ink-mute); }
+
+.chat-log { display: flex; flex-direction: column; gap: 0.7rem; min-height: 16rem; max-height: 26rem; overflow-y: auto; padding: 1rem; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
+.bubble-row { display: flex; }
+.bubble-row.is-user { justify-content: flex-end; }
+.bubble { max-width: 85%; padding: 0.65rem 0.9rem; border-radius: 16px; font-size: 0.95rem; line-height: 1.5; animation: bubbleIn 0.22s var(--ease); }
+.is-bot .bubble { background: var(--paper-2); border: 1px solid var(--line); border-bottom-left-radius: 5px; color: var(--ink); }
+.is-user .bubble { background: var(--pine); color: var(--paper); border-bottom-right-radius: 5px; }
+@keyframes bubbleIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.bubble--typing { display: inline-flex; gap: 4px; align-items: center; }
+.bubble--typing .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-mute); animation: blink 1.2s infinite; }
+.bubble--typing .dot:nth-child(2) { animation-delay: 0.2s; }
+.bubble--typing .dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink { 0%, 60%, 100% { opacity: 0.25; } 30% { opacity: 1; } }
+
+.chat-input { display: flex; gap: 0.6rem; margin-top: 1rem; }
+.chat-input input { flex: 1; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 0.7rem 1.1rem; transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease); }
+.chat-input input:focus { outline: none; border-color: var(--pine); box-shadow: 0 0 0 3px var(--pine-tint); }
+.chat-input .btn { border-radius: 999px; padding-inline: 1.3rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble { animation: none; }
+  .bubble--typing .dot { animation: none; opacity: 0.5; }
+}
+
 @media (max-width: 32rem) {
   .cat-row { grid-template-columns: 1fr; gap: 0.3rem; }
   .quiz-nav .btn { min-width: 0; flex: 1; }

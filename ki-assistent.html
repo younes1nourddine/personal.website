@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>KI-Assistent live testen · Younes Nourddine</title>
+  <meta name="description" content="Sprechen Sie direkt mit einer KI-Telefonassistenz für Ihre Branche. Kostenlose Demo, ohne Anmeldung." />
+  <link rel="canonical" href="https://www.deine-domain.de/ki-assistent.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#EDEBE6" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/assistant.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="brand" href="index.html" aria-label="Younes Nourddine, Startseite">
+        <span class="brand-mark" aria-hidden="true">YN</span>
+        <span class="brand-name">Younes Nourddine</span>
+      </a>
+      <a class="nav-link" href="index.html">Zurück zur Startseite</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="check-hero">
+      <div class="wrap">
+        <p class="eyebrow"><span class="tick" aria-hidden="true"></span>Live-Demo, ohne Anmeldung</p>
+        <h1 class="section-title">Sprechen Sie mit einer KI-Assistenz</h1>
+        <p class="check-lead">So könnte Ihre Telefonannahme klingen, wenn gerade niemand rangehen kann. Wählen Sie Ihre Branche und schreiben Sie einfach los, als wären Sie ein Kunde.</p>
+      </div>
+    </section>
+
+    <section class="section" data-check>
+      <div class="wrap">
+        <div class="chat-card">
+          <p class="chat-label" id="branch-label">Für welchen Betrieb soll die Assistenz antworten?</p>
+          <div class="chip-row" role="radiogroup" aria-labelledby="branch-label" id="branch-row">
+            <button type="button" class="chip is-active" data-branch="werkstatt" role="radio" aria-checked="true">Kfz-Werkstatt</button>
+            <button type="button" class="chip" data-branch="friseur" role="radio" aria-checked="false">Friseursalon</button>
+            <button type="button" class="chip" data-branch="fahrschule" role="radio" aria-checked="false">Fahrschule</button>
+            <button type="button" class="chip" data-branch="handwerk" role="radio" aria-checked="false">Handwerk</button>
+            <button type="button" class="chip" data-branch="sonstiges" role="radio" aria-checked="false">Sonstiges</button>
+          </div>
+
+          <div class="chat-log" id="chat-log" aria-live="polite" aria-label="Gespräch"></div>
+
+          <div class="chip-row chip-row--suggest" id="suggestions"></div>
+
+          <form class="chat-input" id="chat-form">
+            <label class="visually-hidden" for="chat-text">Ihre Nachricht</label>
+            <input id="chat-text" type="text" maxlength="500" autocomplete="off" placeholder="Zum Beispiel: Ich bräuchte einen Termin für die Inspektion" />
+            <button class="btn btn-primary" type="submit" id="chat-send">Senden</button>
+          </form>
+
+          <p class="disclaimer">Demo eines KI-Assistenten. Antworten können Fehler enthalten und sind nicht verbindlich. Ihre Eingaben werden zur Beantwortung an einen KI-Dienst übermittelt und nicht gespeichert. Details in der <a href="pages/datenschutz.html">Datenschutzerklärung</a>.</p>
+        </div>
+
+        <div class="result cta-space">
+          <p class="block-title">Gefällt Ihnen, was Sie sehen?</p>
+          <p class="score-sub">Genau so eine Assistenz kann bei Ihnen ans Telefon gehen, Termine aufnehmen und Rückrufe melden.</p>
+          <a class="btn btn-primary result-cta cta-space" href="index.html#kontakt">Kostenloses Erstgespräch vereinbaren</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">YN</span>
+        <div>
+          <p class="footer-name">Younes Nourddine</p>
+          <p class="footer-tag">Digitale Lösungen für den Mittelstand</p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Rechtliches">
+        <a href="pages/impressum.html">Impressum</a>
+        <a href="pages/datenschutz.html">Datenschutz</a>
+      </nav>
+      <p class="footer-copy">© <span id="year">2026</span> Younes Nourddine</p>
+    </div>
+  </footer>
+</body>
+</html>
