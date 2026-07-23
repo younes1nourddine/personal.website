@@ -290,6 +290,7 @@ ul, ol, dl { margin: 0; padding: 0; list-style: none; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .mark::after { transition: none; transform: scaleX(1); }
   .btn:hover, .card:hover { transform: none; }
+  #quiz-step.step-anim { animation: none; }
 }
 
 /* ---------- Rechtstexte (Impressum / Datenschutz) ---------- */
@@ -325,7 +326,11 @@ ul, ol, dl { margin: 0; padding: 0; list-style: none; }
 .opt-card:has(input:checked) .opt-check { border-color: var(--pine); }
 .opt-card:has(input:checked) .opt-check::after { transform: scale(1); }
 .opt-card:focus-within { outline: 2px solid var(--pine); outline-offset: 2px; }
+.opt-card:active { transform: scale(0.99); }
 .opt-label { font-size: 0.98rem; }
+
+@keyframes stepIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+#quiz-step.step-anim { animation: stepIn 0.28s var(--ease); }
 
 .quiz-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.6rem; }
 .quiz-nav .btn { min-width: 8rem; }

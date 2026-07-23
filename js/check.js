@@ -79,6 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
     progress.style.width = pct + "%";
   }
 
+  function playStepAnim() {
+    stepBox.classList.remove("step-anim");
+    void stepBox.offsetWidth;
+    stepBox.classList.add("step-anim");
+  }
+
   function renderStep() {
     backBtn.hidden = state.step === 0;
 
@@ -91,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <label for="url">Website-Adresse</label>
           <input id="url" name="url" type="url" inputmode="url" placeholder="https://ihre-website.de" maxlength="200" value="${escapeAttr(state.url)}" />
         </div>`;
+      playStepAnim();
       nextBtn.textContent = "Auswerten";
       nextBtn.disabled = false;
       setProgress();
@@ -114,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
           )
           .join("")}
       </div>`;
+    playStepAnim();
     nextBtn.textContent = "Weiter";
     nextBtn.disabled = !(q.key in state.answers);
 
@@ -140,6 +148,17 @@ document.addEventListener("DOMContentLoaded", () => {
   backBtn.addEventListener("click", () => {
     if (state.step > 0) state.step -= 1;
     renderStep();
+  });
+
+  // Enter geht zur naechsten Frage, sobald eine Antwort gewaehlt ist (iOS-artiges, schnelles Handling).
+  card.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter") return;
+    const t = e.target;
+    if (t === nextBtn || t === backBtn || (t && t.classList && t.classList.contains("mode-btn"))) return;
+    if (!card.hidden && !nextBtn.disabled && !nextBtn.hidden) {
+      e.preventDefault();
+      nextBtn.click();
+    }
   });
 
   function setMode(mode) {
